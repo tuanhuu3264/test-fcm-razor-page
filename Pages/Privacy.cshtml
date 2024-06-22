@@ -1,0 +1,52 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+<button id="throwTokenBtn">Throw Token</button>
+
+<div id="notification"></div>
+
+@section Scripts {
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-messaging.js"></script>
+    <script>
+        var firebaseConfig = {
+            // chua key
+        };
+      
+        firebase.initializeApp(firebaseConfig);
+
+        const messaging = firebase.messaging();
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/firebase-messaging-sw.js')
+                .then(function (registration) {
+                    console.log('Service Worker registration successful with scope: ', registration.scope);
+                    messaging.useServiceWorker(registration);
+                }).catch(function (err) {
+                    console.log('Service Worker registration failed: ', err);
+                });
+        }
+
+        document.getElementById('throwTokenBtn').addEventListener('click', () => {
+            messaging.requestPermission()
+                .then(() => messaging.getToken())
+                .then(token => {
+                    console.log('Token received:', token);
+                   
+                })
+                .catch(error => {
+                    console.error('Error getting token:', error);
+                });
+        });
+        messaging.onMessage((payload) => {
+            console.log('Message received. ', payload);
+            document.getElementById('notification').innerText = `Notification received: ${payload.notification.title} - ${payload.notification.body}`;
+        });
+    </script>
+}

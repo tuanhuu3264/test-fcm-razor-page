@@ -1,0 +1,98 @@
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# Auto generated files (mobile)
+pbytemp*
+*.pidb
+*.booproj
+*.svd
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Uncomment if you have tasks that create the project's static files in `dist`
+//dist/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Cake
+# Uncomment if you are using it
+# tools/Cake/
+
+# Chutzpah Test files
+_Chutzpah*
+
+# VS Code directories
+.vscode/
+.vscode-test/
+
+# ASP.NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# StyleCop
+StyleCopReport.xml
+
+# File-based packages
+*.nupkg
+*.snupkg
+*.symbols.nupkg
+*.psmdcp
+
+# Package directories
+**/packages/*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.vscode-test/
+
+# DotNet
+dotnet.cache/
+
+# Rider directories
+.idea/
+
+# JetBrains Rider
+.idea/
+.idea_modules/
+
+# Rider plugins
+*.sln.iml
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+*.AssemblyReference.cache
